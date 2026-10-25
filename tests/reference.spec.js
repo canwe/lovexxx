@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { readFileSync } from "node:fs";
 
-const content = JSON.parse(readFileSync(new URL("../web/content.json", import.meta.url), "utf8"));
+const content = JSON.parse(readFileSync(new URL("../content.json", import.meta.url), "utf8"));
 
 /** Colors/order from original style.css nth-child + local saved DOM order */
 const ORIGINAL_PORTAL_ORDER = [

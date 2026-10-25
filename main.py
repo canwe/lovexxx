@@ -1,4 +1,4 @@
-"""Serve the static site in web/ for local preview (PyCharm Run)."""
+"""Serve the static site for local preview (PyCharm Run)."""
 
 from __future__ import annotations
 
@@ -9,7 +9,10 @@ import socketserver
 import webbrowser
 from pathlib import Path
 
-WEB_ROOT = Path(__file__).resolve().parent / "web"
+ROOT = Path(__file__).resolve().parent
+# Only the Pages site — not tests, lockfiles, etc.
+SITE_ROOT = ROOT
+SITE_INDEX = ROOT / "index.html"
 DEFAULT_PORT = 8080
 
 
@@ -29,18 +32,18 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    if not WEB_ROOT.is_dir():
-        raise SystemExit(f"Missing web root: {WEB_ROOT}")
+    if not SITE_INDEX.is_file():
+        raise SystemExit(f"Missing site index: {SITE_INDEX}")
 
     handler = functools.partial(
         http.server.SimpleHTTPRequestHandler,
-        directory=str(WEB_ROOT),
+        directory=str(SITE_ROOT),
     )
 
     socketserver.TCPServer.allow_reuse_address = True
     with socketserver.TCPServer(("127.0.0.1", args.port), handler) as httpd:
         url = f"http://127.0.0.1:{args.port}/"
-        print(f"Serving {WEB_ROOT}")
+        print(f"Serving {SITE_ROOT}")
         print(f"Open {url}")
         if not args.no_browser:
             webbrowser.open(url)

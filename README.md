@@ -6,7 +6,7 @@ Interactive home-grid remake inspired by the 2014 [love.xxx](http://love.xxx/) e
 
 ## Quick start
 
-From PyCharm: run [`main.py`](main.py) (green gutter / ⌃R). It serves `web/` at `http://127.0.0.1:8080/` and opens a browser.
+From PyCharm: run [`main.py`](main.py) (green gutter / ⌃R). It serves the site at `http://127.0.0.1:8080/` and opens a browser.
 
 ```bash
 python main.py
@@ -15,7 +15,7 @@ python main.py
 
 ## Content model
 
-All gallery pictures are **external absolute URLs**. The frontend never hosts your photos — it only reads them from [`web/content.json`](web/content.json).
+All gallery pictures are **external absolute URLs**. The frontend never hosts your photos — it only reads them from [`content.json`](content.json).
 
 ```json
 {
@@ -56,14 +56,12 @@ npm test
 
 ## Deploy (GitHub Pages)
 
-The live app lives in [`web/`](web/). A root [`index.html`](index.html) redirects `/` → `/web/` so project Pages URLs like `https://<user>.github.io/<repo>/` open the site immediately (branch deploy).
+The app sits at the repo root (`index.html`, `css/`, `js/`, `assets/`, `content.json`), so `https://<user>.github.io/<repo>/` is the site itself — no `/web/` path and no redirect.
 
-For a clean site root (no `/web/` in the URL):
+- **Branch deploy (current):** Settings → Pages → Deploy from a branch → `/ (root)`.
+- **Actions (optional):** Settings → Pages → Source: GitHub Actions. The workflow builds with Node.js 24 and publishes only the site files via [`.github/workflows/pages.yml`](.github/workflows/pages.yml).
 
-1. **Settings → Pages → Source:** GitHub Actions (not “Deploy from a branch”).
-2. Push to `main` (or run **Deploy GitHub Pages**). The workflow builds with Node.js 24 and publishes only `web/` via [`.github/workflows/pages.yml`](.github/workflows/pages.yml).
-
-Paths inside the app are relative (`./css/...`, `./content.json`) so either hosting mode works.
+Paths inside the app are relative (`./css/...`, `./content.json`).
 
 ## Interactions (v1)
 
