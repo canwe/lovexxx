@@ -56,12 +56,14 @@ npm test
 
 ## Deploy (GitHub Pages)
 
-1. Push this repo to GitHub.
-2. **Settings → Pages → Source:** GitHub Actions.
-3. Push to `main` (or run the **Deploy GitHub Pages** workflow manually).
-4. Site publishes from the `web/` folder via [`.github/workflows/pages.yml`](.github/workflows/pages.yml).
+The live app lives in [`web/`](web/). A root [`index.html`](index.html) redirects `/` → `/web/` so project Pages URLs like `https://<user>.github.io/<repo>/` open the site immediately (branch deploy).
 
-If the repo is not at the domain root, paths are relative (`./css/...`, `./content.json`) so project Pages URLs work.
+For a clean site root (no `/web/` in the URL):
+
+1. **Settings → Pages → Source:** GitHub Actions (not “Deploy from a branch”).
+2. Push to `main` (or run **Deploy GitHub Pages**). The workflow builds with Node.js 24 and publishes only `web/` via [`.github/workflows/pages.yml`](.github/workflows/pages.yml).
+
+Paths inside the app are relative (`./css/...`, `./content.json`) so either hosting mode works.
 
 ## Interactions (v1)
 

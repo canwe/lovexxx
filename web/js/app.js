@@ -416,7 +416,10 @@ function bindInteractions() {
     });
   });
 
-  el.back.addEventListener("click", zoomOut);
+  el.back.addEventListener("click", (e) => {
+    e.preventDefault();
+    zoomOut();
+  });
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") zoomOut();
   });
