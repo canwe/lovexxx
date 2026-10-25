@@ -1,0 +1,415 @@
+/* Closely ported from original love.xxx style.css (home / contact stage / chrome). */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: black;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+}
+
+a:focus {
+  outline: none;
+}
+
+button {
+  font: inherit;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* —— Preloader —— */
+.preloader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5000;
+  background-color: black;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.preloader.videos { background-color: #00b87c; }
+.preloader.commercials { background-color: #f2fe68; }
+.preloader.store { background-color: #008af6; }
+.preloader.rhymes { background-color: #ff005c; }
+.preloader.charms { background-color: #f0aead; }
+.preloader.contact { background-color: #ff6ccf; }
+
+.preloader.is-done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transition: opacity 0.2s ease, visibility 0.2s ease;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.preloader .preloader-wrap {
+  position: absolute;
+  width: 66.666666%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@media screen and (orientation: portrait) {
+  .preloader .preloader-wrap {
+    width: 100%;
+    height: 66.666666%;
+  }
+}
+
+.preloader img,
+.preloader-mark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  height: 100%;
+  width: auto;
+  -webkit-animation: thump 1s infinite linear;
+  animation: thump 1s infinite linear;
+}
+
+.preloader-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18vw;
+  line-height: 1;
+  width: 100%;
+  height: auto;
+}
+
+.thump {
+  -webkit-animation: thump 1s infinite linear;
+  animation: thump 1s infinite linear;
+}
+
+@-webkit-keyframes thump {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes thump {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* —— Home —— */
+.home-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.portals {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.portals.top-left { -webkit-transform-origin: top left; transform-origin: top left; }
+.portals.top-center { -webkit-transform-origin: top center; transform-origin: top center; }
+.portals.top-right { -webkit-transform-origin: top right; transform-origin: top right; }
+.portals.bottom-left { -webkit-transform-origin: bottom left; transform-origin: bottom left; }
+.portals.bottom-center { -webkit-transform-origin: bottom center; transform-origin: bottom center; }
+.portals.bottom-right { -webkit-transform-origin: bottom right; transform-origin: bottom right; }
+.portals.center-left { -webkit-transform-origin: center left; transform-origin: center left; }
+.portals.center-right { -webkit-transform-origin: center right; transform-origin: center right; }
+
+.portals section {
+  position: relative;
+  float: left;
+  display: block;
+  width: 33.333333%;
+  height: 50%;
+  overflow: hidden;
+}
+
+@media screen and (orientation: portrait) {
+  .portals section {
+    width: 50%;
+    height: 33.333333%;
+  }
+}
+
+.portals-type {
+  z-index: 8;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.portals-type section:nth-child(1) { background-color: #00b87c; }
+.portals-type section:nth-child(2) { background-color: #f2fe68; }
+.portals-type section:nth-child(3) { background-color: #008af6; }
+.portals-type section:nth-child(4) { background-color: #ff005c; }
+.portals-type section:nth-child(5) { background-color: #f0aead; }
+.portals-type section:nth-child(6) { background-color: #ff6ccf; }
+.portals-type section:nth-child(n+7) { background-color: black; }
+
+.portals-type .title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  height: 100%;
+  width: auto;
+  pointer-events: none;
+}
+
+@media screen and (max-aspect-ratio: 3/2) {
+  .portals-type .title {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+  .portals-type .title {
+    height: 100%;
+    width: auto;
+  }
+}
+
+@media screen and (max-aspect-ratio: 2/3) {
+  .portals-type .title {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.portals-type.zooming,
+.portals-type.zoom {
+  cursor: default;
+}
+
+.portals-type.zooming section:not(.active),
+.portals-type.zoom section:not(.active) {
+  visibility: hidden;
+}
+
+.portals-images {
+  pointer-events: none;
+  z-index: 10;
+}
+
+.portals-images .images {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-transition: opacity 0.6s ease;
+  transition: opacity 0.6s ease;
+}
+
+.portals-images .home-image {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.portals-images .home-image.is-hidden {
+  display: none;
+}
+
+.portals-images .hover .images,
+.portals-images .active .images {
+  display: none;
+}
+
+.portals-images.zoom .images {
+  opacity: 0;
+}
+
+/* —— Enter stage (contact-images + .text) —— */
+.portal-stage {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3000;
+  display: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  overflow: hidden;
+  background-color: black;
+}
+
+.portal-stage.is-open {
+  display: block;
+  opacity: 1;
+}
+
+.portal-stage[hidden] {
+  display: none;
+}
+
+.portal-stage.is-open[hidden] {
+  display: block;
+}
+
+/* Full-bleed covers (same technique as home .home-image — picsum-safe). */
+.portal-stage-images {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.portal-stage-images .stage-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-position: center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.portal-stage-images .stage-image.is-hidden {
+  display: none;
+}
+
+.portal-stage-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  cursor: default;
+  pointer-events: none;
+  background: transparent;
+}
+
+.portal-stage-text.is-clear .portal-stage-text-wrap {
+  visibility: hidden;
+}
+
+.portal-stage-text-wrap {
+  position: absolute;
+  width: 66.666666%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@media screen and (orientation: portrait) {
+  .portal-stage-text-wrap {
+    width: 100%;
+    height: 66.666666%;
+  }
+}
+
+.portal-stage-text-wrap img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  height: 100%;
+  width: auto;
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+  .portal-stage-text-wrap img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* —— Back —— */
+.back {
+  z-index: 8000;
+  position: fixed;
+  top: 0;
+  padding-top: 14px;
+  left: 0;
+  padding-left: 28px;
+  font-size: 30px;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.back.hider {
+  -webkit-transform: translateX(-100px);
+  -ms-transform: translateX(-100px);
+  transform: translateX(-100px);
+  pointer-events: none;
+}
+
+.back.black {
+  color: black;
+}

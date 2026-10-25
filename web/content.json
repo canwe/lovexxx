@@ -1,0 +1,80 @@
+{
+  "site": {
+    "title": "<3",
+    "name": "LOVE.XXX"
+  },
+  "portals": [
+    {
+      "id": "videos",
+      "label": "videos",
+      "color": "#00b87c",
+      "images": [
+        "https://picsum.photos/seed/love-videos-1/1600/1200",
+        "https://picsum.photos/seed/love-videos-2/1600/1200",
+        "https://picsum.photos/seed/love-videos-3/1600/1200",
+        "https://picsum.photos/seed/love-videos-4/1600/1200",
+        "https://picsum.photos/seed/love-videos-5/1600/1200"
+      ]
+    },
+    {
+      "id": "commercials",
+      "label": "commercials",
+      "color": "#f2fe68",
+      "images": [
+        "https://picsum.photos/seed/love-comms-1/1600/1200",
+        "https://picsum.photos/seed/love-comms-2/1600/1200",
+        "https://picsum.photos/seed/love-comms-3/1600/1200",
+        "https://picsum.photos/seed/love-comms-4/1600/1200",
+        "https://picsum.photos/seed/love-comms-5/1600/1200"
+      ]
+    },
+    {
+      "id": "store",
+      "label": "store",
+      "color": "#008af6",
+      "images": [
+        "https://picsum.photos/seed/love-store-1/1600/1200",
+        "https://picsum.photos/seed/love-store-2/1600/1200",
+        "https://picsum.photos/seed/love-store-3/1600/1200",
+        "https://picsum.photos/seed/love-store-4/1600/1200",
+        "https://picsum.photos/seed/love-store-5/1600/1200"
+      ]
+    },
+    {
+      "id": "rhymes",
+      "label": "rhymes",
+      "color": "#ff005c",
+      "images": [
+        "https://picsum.photos/seed/love-rhymes-1/1600/1200",
+        "https://picsum.photos/seed/love-rhymes-2/1600/1200",
+        "https://picsum.photos/seed/love-rhymes-3/1600/1200",
+        "https://picsum.photos/seed/love-rhymes-4/1600/1200",
+        "https://picsum.photos/seed/love-rhymes-5/1600/1200"
+      ]
+    },
+    {
+      "id": "charms",
+      "label": "charms",
+      "color": "#f0aead",
+      "images": [
+        "https://picsum.photos/seed/love-charms-1/1600/1200",
+        "https://picsum.photos/seed/love-charms-2/1600/1200",
+        "https://picsum.photos/seed/love-charms-3/1600/1200",
+        "https://picsum.photos/seed/love-charms-4/1600/1200",
+        "https://picsum.photos/seed/love-charms-5/1600/1200"
+      ]
+    },
+    {
+      "id": "contact",
+      "label": "contact",
+      "color": "#ff6ccf",
+      "images": [
+        "https://picsum.photos/seed/love-contact-1/1600/1200",
+        "https://picsum.photos/seed/love-contact-2/1600/1200",
+        "https://picsum.photos/seed/love-contact-3/1600/1200",
+        "https://picsum.photos/seed/love-contact-4/1600/1200",
+        "https://picsum.photos/seed/love-contact-5/1600/1200"
+      ]
+    }
+  ]
+}
